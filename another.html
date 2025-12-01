@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f1f1;
+            text-align: center;
+            background-image: url("https://www.blinkco.io/wp-content/uploads/2022/01/shopping-cart-full-of-food-on-yellow-background-g-2021-09-02-09-26-59-utc-1.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        table {
+            margin: 30px auto;
+            width: 60%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 12px;
+        }
+        
+        th {
+            background: #007bff;
+            color: white;
+        }
+        
+        button {
+            background: red;
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: darkred;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 style="color:blue">
+        <marquee>🛒 Your Cart</marquee>
+    </h1>
+    <table id="cartTable">
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Price (₹)</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="cartBody">
+        </tbody>
+    </table>
+
+    <h2 id="totalPrice">Total: ₹0</h2>
+
+    <a href="seafood.html">
+        <button style="background: green;">Back to Dishes</button>
+    </a>
+
+    <script>
+        function loadCart() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let cartBody = document.getElementById("cartBody");
+            let total = 0;
+            cartBody.innerHTML = "";
+
+            cart.forEach((item, index) => {
+                total += item.price;
+                let row = `
+                    <tr>
+                        <td>${item.name}</td>
+                        <td>${item.price}</td>
+                        <td><button onclick="removeItem(${index})">Remove</button></td>
+                    </tr>
+                `;
+                cartBody.innerHTML += row;
+            });
+
+            document.getElementById("totalPrice").innerText = "Total: ₹" + total;
+        }
+
+        function removeItem(index) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            loadCart();
+        }
+
+
+        window.onload = loadCart;
+    </script>
+
+</body>
+
+</html>

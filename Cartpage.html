@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f9f5ef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .cart-container {
+            background: linear-gradient(to right, #f6e3c5, #fdf5e6);
+            border: 1px solid #d8c9b0;
+            border-radius: 10px;
+            padding: 50px 80px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cart-container h1 {
+            color: #b3541e;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        .empty-msg {
+            color: #444;
+            font-size: 1.1em;
+            margin-bottom: 25px;
+        }
+        
+        .clear-btn {
+            background-color: #b3541e;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .clear-btn:hover {
+            background-color: #923f15;
+        }
+    </style>
+    <script>
+        < script >
+            // Get cart data from localStorage
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let cartTable = document.getElementById("cartItems");
+        let total = 0;
+
+        cart.forEach(item => {
+            let row = `<tr>
+                  <td>${item.name}</td>
+                  <td>${item.price}</td>
+                </tr>`;
+            cartTable.innerHTML += row;
+            total += item.price;
+        });
+
+        document.getElementById("total").innerText = "Total: ₹" + total;
+    </script>
+
+    </script>
+</head>
+
+<body>
+    <div class="cart-container">
+        <h1>Your Cart</h1>
+        <p class="empty-msg">Your cart is empty</p>
+        <button class="clear-btn">Clear Cart</button>
+        <h3 id="total"></h3>
+    </div>
+
+
+</body>
+
+</html>

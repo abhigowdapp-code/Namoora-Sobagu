@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+    </style>
+    <script>
+        function validate() {
+            var user = document.getElementById("Username");
+            var pass = document.getElementById("password");
+            if (user.value === "" || pass.value === "") {
+                alert("no blank allowed");
+                return false;
+
+            } else {
+                return true;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <form action="mainpage.html" onsubmit="return validate()">
+            <input id="Username" placeholder="Enter your name">
+            <br><br>
+            <input id="password" placeholder="Password">
+            <br><br>
+            <button> Submit</button>
+        </form>
+    </center>
+</body>
+
+</html>

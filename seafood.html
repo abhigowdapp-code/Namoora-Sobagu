@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fishes</title>
+    <style>
+        body {
+            background-image: url("https://wallpaperaccess.com/full/385454.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .Ammu {
+            text-shadow: 4px 5px 20px blue;
+        }
+        
+        button {
+            background-color: blue;
+            border: 2px solid black
+        }
+        
+        button:active {
+            background-color: blueviolet;
+            border: 3px solid black;
+            padding: 10px;
+        }
+        
+        a {
+            background-color: blue;
+        }
+        
+        table {
+            border: 5px double red;
+            height: 400px;
+            width: 600px;
+            text-align: center;
+            border-collapse: collapse;
+        }
+        
+        tr {
+            border: 3px dashed red;
+        }
+    </style>
+    <script>
+        function addToCart(name, price) {
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+
+            cart.push({
+                name: name,
+                price: price
+            });
+
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            alert(name + " added to cart!");
+        }
+    </script>
+</head>
+
+<body>
+    <h1 class="Ammu" align="center">Menu for Sea Food</h1>
+    <hr>
+    <table border="1">
+        <tr>
+            <div class="item">
+
+
+                <td>
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.AXal37liV9WpcbKNvveIoAHaE7?pid=Api&P=0&h=180" height="200" width="200">
+                    <td align="center">Baked Salmon<br> 400 RS/plate<br>
+                        <button onclick="addToCart('Baked Salmon', 400)">Add to Cart</button>
+
+
+                    </td>
+                </td>
+
+        </tr>
+        <tr>
+
+            <td><img src="https://tse3.mm.bing.net/th/id/OIP.qiMa1RXLW8bfqT35Piiv9QHaFP?pid=Api&P=0&h=180" height="200" width="200">
+                <td align="center">Tuna Steak<br> 250 RS/plate<br>
+                    <button onclick="addToCart('Tuna Steak', 250)">Add to Cart</button>
+                </td>
+
+        </tr>
+        <tr>
+
+            <td> <img src="https://tse4.mm.bing.net/th/id/OIP.1quFTzTex3T4YZYCCWv8JAHaE6?pid=Api&P=0&h=180" height="200" width="200">
+                <td align="center">Mackerel(Bangda) fry<br> 550 RS/plate<br>
+                    <button onclick="addToCart('Mackerel', 550)">Add to Cart</button>
+                </td>
+            </td>
+
+        </tr>
+        <tr>
+
+            <td><img src="https://tse4.mm.bing.net/th/id/OIP.HJ_9pB5FENTdMPtuvPEz5QHaE8?pid=Api&P=0&h=180" height="200" width="200">
+                <td align="center">Sardines Rost<br> 155 RS/plate<br>
+                    <button onclick="addToCart('Sardines Rost', 155)">Add to Cart</button>
+                </td>
+
+        </tr>
+        <tr>
+
+            <td><img src="https://tse4.mm.bing.net/th/id/OIP.eROLFb4Cr8xH8B0HgHH1dgHaFj?pid=Api&P=0&h=180" height="200" width="200">
+                <td align="center">Shrimp (Prawns)<br> 260 RS/plate<br>
+
+                    <button onclick="addToCart('Shrimp', 260)">Add to Cart</button>
+                </td>
+
+        </tr>
+        <tr>
+
+            <td><img src="https://thumbs.dreamstime.com/z/seafood-squid-grill-market-25476602.jpg" height="200" width="200">
+                <td align="center">Squid (Calamari)<br> 300 RS/plate<br>
+
+                    <button onclick="addToCart('Squid ', 300)">Add to Cart</button>
+
+                </td>
+
+        </tr>
+
+        <tr>
+
+            <td><img src="https://tse4.mm.bing.net/th/id/OIP._WkYUQ5esBAkFiHHkPng2wHaJQ?pid=Api&P=0&h=180" height="200" width="200">
+                <td align="center">Crab<br> 200 RS/plate<br>
+                    <button onclick="addToCart('Crab', 200)">Add to Cart</button>
+
+
+                </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td><img src="https://tse1.mm.bing.net/th/id/OIP.V31YLMb2vaIdYn0evKR-wgHaE8?pid=Api&P=0&h=180" height="200" width="200">
+                <td align="center">Fish Tikka<br> 260 RS/plate<br>
+                    <button onclick="addToCart('Fish Tikka', 260)">Add to Cart</button>
+                </td>
+
+        </tr>
+        <tr>
+
+            <td><img src="https://tse3.mm.bing.net/th/id/OIP.eVWfrEHXPhyW6bVyZrdMcAHaFj?pid=Api&P=0&h=180" height="200" width="200">
+                <td align="center">Fish Finger<br> 270 RS/plate<br>
+                    <button onclick="addToCart('Fish Finger', 270)">Add to Cart</button>
+
+                </td>
+        </tr>
+        <tr>
+            <!-- <div class="item"> -->
+            <td><img src="https://tse3.mm.bing.net/th/id/OIP.66xfiGVWMapXALa_-s-zbwHaHa?pid=Api&P=0&h=180" height="200" width="200">
+                <td align="center">Fish Pulusu<br> 260 RS/plate<br>
+                    <button onclick="addToCart('Fish Pulusu', 260)">Add to Cart</button>
+                </td>
+                <!-- </div> -->
+                </div>
+        </tr>
+
+
+    </table>
+    <br><br><br>
+    <center>
+
+        <a href="nonvegpage.html" button>⬅ Back </b>
+
+                <br><br>
+                 <a href="another.html">
+            <button>Go to Cart Page</button>
+    </center>
+</body>
+
+</html>

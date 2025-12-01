@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Icon</title>
+    <style>
+        body {
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .cart {
+            position: relative;
+            width: 50px;
+            height: 40px;
+            cursor: pointer;
+        }
+        /* Cart basket */
+        
+        .cart::before {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: 5px;
+            width: 40px;
+            height: 20px;
+            border: 3px solid #333;
+            border-top: none;
+            border-radius: 0 0 6px 6px;
+        }
+        /* Cart handle */
+        
+        .cart::after {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            width: 25px;
+            height: 20px;
+            border: 3px solid #333;
+            border-bottom: none;
+            transform: skew(-15deg);
+        }
+        /* Wheels */
+        
+        .wheel {
+            position: absolute;
+            bottom: 0;
+            width: 10px;
+            height: 10px;
+            background: #333;
+            border-radius: 50%;
+        }
+        
+        .wheel.left {
+            left: 5px;
+        }
+        
+        .wheel.right {
+            right: 5px;
+        }
+        /* Badge (item count) */
+        
+        .badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #e63946;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+        }
+        /* Hover effect */
+        
+        .cart:hover {
+            transform: scale(1.1);
+            transition: 0.2s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cart">
+        <div class="wheel left"></div>
+        <div class="wheel right"></div>
+        <div class="badge">2</div>
+    </div>
+
+</body>
+
+</html>
